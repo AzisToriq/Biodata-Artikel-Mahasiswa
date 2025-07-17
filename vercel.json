@@ -1,0 +1,28 @@
+{
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  },
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/dashboard", "dest": "/api/dashboard.php" },
+    { "src": "/", "dest": "/api/index.php" },
+    { "src": "/logout", "dest": "/api/logout.php" },
+    { "src": "/auth/login", "dest": "/api/auth/login.php" },
+    { "src": "/auth/logout", "dest": "/api/auth/logout.php" },
+    { "src": "/auth/register", "dest": "/api/auth/register.php" },
+    { "src": "/biodata/daftar", "dest": "/api/biodata/daftar.php" },
+    { "src": "/biodata/delete", "dest": "/api/biodata/delete.php" },
+    { "src": "/biodata/edit", "dest": "/api/biodata/edit.php" },
+    { "src": "/biodata/tambah", "dest": "/api/biodata/tambah.php" },
+    { "src": "/blog/detail_artikel", "dest": "/api/blog/detail_artikel.php" },
+    { "src": "/blog/edit_artikel", "dest": "/api/blog/edit_artikel.php" },
+    { "src": "/blog/hapus_artikel", "dest": "/api/blog/hapus_artikel.php" },
+    { "src": "/blog", "dest": "/api/blog/index.php" },
+    { "src": "/blog/index", "dest": "/api/blog/index.php" },
+    { "src": "/blog/tambah_artikel", "dest": "/api/blog/tambah_artikel.php" },
+    { "src": "/(.*).php", "dest": "/api/$1.php" },
+    { "src": "/(.*)", "dest": "/api/$1" }
+  ]
+}
