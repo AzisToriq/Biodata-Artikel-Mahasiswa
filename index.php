@@ -1,6 +1,8 @@
 <?php
 require_once 'includes/koneksi.php';
 $data = $pdo->query("SELECT * FROM posts ORDER BY tanggal DESC LIMIT 5")->fetchAll();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
