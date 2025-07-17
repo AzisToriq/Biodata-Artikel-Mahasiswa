@@ -1,9 +1,12 @@
 FROM php:8.2-apache
 
-# Aktifkan ekstensi mysqli untuk koneksi database
-RUN docker-php-ext-install mysqli
+# Install ekstensi yang dibutuhkan
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# Salin semua file ke direktori Apache di dalam container
+# Copy semua file ke direktori Apache
 COPY . /var/www/html/
+
+# Aktifkan mod_rewrite Apache untuk .htaccess (jika perlu)
+RUN a2enmod rewrite
 
 EXPOSE 80
